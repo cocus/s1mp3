@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{66650436-63FA-4F61-8843-1A32162CA666}</ProjectGuid>
+    <RootNamespace>s1res</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35707.178</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WINVER=0x0500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>comctl32.lib;setupapi.lib;htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CustomBuildStep>
+      <Message />
+      <Command />
+    </CustomBuildStep>
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WINVER=0x0500;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>comctl32.lib;setupapi.lib;htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\AdfuSession.cpp" />
+    <ClCompile Include="..\common\FirmwareIO.cpp" />
+    <ClCompile Include="..\common\FlashIO.cpp" />
+    <ClCompile Include="..\common\GiveIO.cpp" />
+    <ClCompile Include="DeviceIO.cpp" />
+    <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="FileIO.cpp" />
+    <ClCompile Include="FwPropDlg.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainApp.cpp" />
+    <ClCompile Include="Options.cpp" />
+    <ClCompile Include="ResItem.cpp" />
+    <ClCompile Include="ResItemImage.cpp" />
+    <ClCompile Include="ResItemString.cpp" />
+    <ClCompile Include="WizDlg.cpp" />
+    <ClCompile Include="WizDlgExport.cpp" />
+    <ClCompile Include="WizDlgImport.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\AdfuCbw.h" />
+    <ClInclude Include="..\common\AdfuCsw.h" />
+    <ClInclude Include="..\common\AdfuDevice.h" />
+    <ClInclude Include="..\common\AdfuDeviceIoctl.h" />
+    <ClInclude Include="..\common\AdfuDeviceLibusb.h" />
+    <ClInclude Include="..\common\AdfuDeviceUsb.h" />
+    <ClInclude Include="..\common\AdfuException.h" />
+    <ClInclude Include="..\common\AdfuSession.h" />
+    <ClInclude Include="..\common\common.h" />
+    <ClInclude Include="..\common\FirmwareIO.h" />
+    <ClInclude Include="..\common\FlashIO.h" />
+    <ClInclude Include="..\common\GiveIO.h" />
+    <ClInclude Include="..\common\s1def.h" />
+    <ClInclude Include="..\common\Sum16.h" />
+    <ClInclude Include="..\common\Sum32.h" />
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="DeviceIO.h" />
+    <ClInclude Include="Dialog.h" />
+    <ClInclude Include="Editor.h" />
+    <ClInclude Include="FileIO.h" />
+    <ClInclude Include="FwPropDlg.h" />
+    <ClInclude Include="Hyperlink.h" />
+    <ClInclude Include="MainApp.h" />
+    <ClInclude Include="Mutex.h" />
+    <ClInclude Include="Options.h" />
+    <ClInclude Include="RCData.h" />
+    <ClInclude Include="ResItem.h" />
+    <ClInclude Include="ResItemImage.h" />
+    <ClInclude Include="ResItemString.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StdString.h" />
+    <ClInclude Include="WizDlg.h" />
+    <ClInclude Include="WizDlgExport.h" />
+    <ClInclude Include="WizDlgImport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\keylock.ico" />
+    <Image Include="res\main.ico" />
+    <Image Include="res\no_img.bmp" />
+    <Image Include="res\open.ico" />
+    <Image Include="res\reload.ico" />
+    <Image Include="res\sheet.font.bmp" />
+    <Image Include="res\sheet.font.mask.bmp" />
+    <Image Include="res\sheet.image.bmp" />
+    <Image Include="res\sheet.image.mask.bmp" />
+    <Image Include="res\sheet.prop.bmp" />
+    <Image Include="res\sheet.prop.mask.bmp" />
+    <Image Include="res\user.ico" />
+    <Image Include="res\wizard.bmp" />
+    <Image Include="res\wizard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\pg_access_rd.rtf" />
+    <None Include="res\pg_access_wr.rtf" />
+    <None Include="res\pg_device.rtf" />
+    <None Include="res\pg_finish_rd.rtf" />
+    <None Include="res\pg_finish_wr.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="s1res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\common\libusb\libusb.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

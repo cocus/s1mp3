@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3088559d-094b-44b6-a3d6-38512e2dfb2f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0bb444f4-ce79-440c-9cd7-8daf30c08473}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{36d5d4a9-abf4-449e-952c-d984884fe7f9}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{0a61dcd0-7f5b-4042-b732-d957aa2df5ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\giveio.bin">
+      <UniqueIdentifier>{4b9eaa4f-f1b7-4c7f-b743-d13e3bc22969}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dasm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\AdfuSession.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\giveio.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dasm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuCbw.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuCsw.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuDevice.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuDeviceIoctl.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuDeviceLibusb.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuDeviceUsb.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuException.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\AdfuSession.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\common.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\giveio.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\common\giveio.bin\giveio.asm">
+      <Filter>common\giveio.bin</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.TXT" />
+    <Text Include="README.TXT" />
+  </ItemGroup>
+</Project>

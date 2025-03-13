@@ -1,12 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "s1clone", "s1clone.vcproj", "{0EBBF894-9031-4BDD-9AAE-FFC55C9DBCF2}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "s1clone", "s1clone.vcxproj", "{0EBBF894-9031-4BDD-9AAE-FFC55C9DBCF2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "installer", "installer\installer.vcproj", "{461018CC-7023-4817-82DC-E9B3C8E1345A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{0EBBF894-9031-4BDD-9AAE-FFC55C9DBCF2} = {0EBBF894-9031-4BDD-9AAE-FFC55C9DBCF2}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "installer", "installer\installer.vcxproj", "{461018CC-7023-4817-82DC-E9B3C8E1345A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

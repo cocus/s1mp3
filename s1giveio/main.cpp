@@ -190,6 +190,8 @@ int main(int argc, char** argv)
     uint8 port = 0;
     uint32 size;
 
+    uint8* pbuf_lcd = nullptr;
+
     printf("use command '?' for help!\n");
     do
     {
@@ -203,7 +205,7 @@ int main(int argc, char** argv)
       short args = parse_values(clp+1);
       if(args < 0) printf("error parsing arguments: check syntax\n");
       else if(args >= 256) printf("error parsing arguments: too many arguments\n");
-      else switch(tolower(*clp))
+      else switch(*clp)
       {
 // -----------------------------------------------------------------------------------------------
       case 'h': //display help
@@ -226,7 +228,52 @@ int main(int argc, char** argv)
               );
         break;
 
+// -----------------------------------------------------------------------------------------------
+      case 'C': // lcd cmd
+          if (args < 1)
+          {
+              printf("too few arguments\n");
+              break;
+          }
+          pbuf_lcd = read_port(0xf4, 1);
+          if (!pbuf_lcd)
+          {
+              printf("failed to allocate memory\n");
+              break;
+          }
+		  printf("Current GPIOC = 0x%x\n", pbuf_lcd[0]);
+          pbuf_lcd[0] &= 0xfb; /* res 2 */
+		  gio.out(0xf4, pbuf_lcd[0]);
+          delete pbuf_lcd;
 
+          printf("LCD CMD = 0x%x\n", value[0]);
+          gio.st(0x8000, &value[0], 1);
+        break;
+
+// -----------------------------------------------------------------------------------------------
+      case 'D': // lcd data
+          if (args < 1)
+          {
+              printf("too few arguments\n");
+              break;
+          }
+          pbuf_lcd = read_port(0xf4, 1);
+          if (!pbuf_lcd)
+          {
+              printf("failed to allocate memory\n");
+              break;
+          }
+          printf("Current GPIOC = 0x%x\n", pbuf_lcd[0]);
+          pbuf_lcd[0] |= 4; /* set 2 */
+          gio.out(0xf4, pbuf_lcd[0]);
+          delete pbuf_lcd;
+
+          for (short n = 0; n < args; n++)
+          {
+              printf("LCD DATA = 0x%x\n", value[n]);
+              gio.st(0x8000, &value[n], 1);
+          }
+          break;
 // -----------------------------------------------------------------------------------------------
       case 'u': //unassemble memory
         if(args > 1) size = value[1]; else size = 32;
